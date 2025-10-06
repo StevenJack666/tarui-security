@@ -1,0 +1,53 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "SecurityAlert",
+  "version": "0.1.0",
+  "identifier": "com.security.alert.demo",
+  "build": {
+    "beforeDevCommand": "npm run dev",
+    "devUrl": "http://localhost:1420",
+    "beforeBuildCommand": "npm run build",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "windows": [
+      {
+        "title": "Security Alert", 
+        "width": 400,
+        "height": 300,
+        "center": true,
+        "resizable": false
+      }
+    ],
+    "security": {
+      "csp": null,
+      "assetProtocol": {
+        "scope": ["**"]
+      }
+    }
+  },
+
+  "bundle": {
+    "active": true,
+    "targets": ["app"],
+    "createUpdaterArtifacts": false,
+    "macOS": {
+      "minimumSystemVersion": "10.13",
+      "hardenedRuntime": false,
+      "entitlements": null,
+      "providerShortName": null,
+      "signingIdentity": null,
+      "frameworks": []
+    },
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ],
+    "category": "Utility",
+    "shortDescription": "Security Alert Application",
+    "longDescription": "A security demonstration application with file access capabilities"
+  }
+}
